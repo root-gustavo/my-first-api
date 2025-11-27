@@ -4,11 +4,20 @@ from src.api.models import User, UserCreate, UserUpdate
 from config.path import DATABASE
 from src.api.key import get_api_key
 
-router = APIRouter()
+router = APIRouter(prefix="/api/v1")
 DB_PATH = DATABASE / "database.db"
 
 
-@router.get("/users", response_model=list[User])
+@router.get(
+    "/users",
+    response_model=list[User],
+    summary="Listar todos os usuários",
+    tags=["Usuários"],
+    description=
+    """
+    Lista todos os usuários do sistema.
+    """
+)
 def listar_usuarios(api_key: str = Depends(get_api_key)):
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
@@ -41,7 +50,16 @@ def obter_usuario(user_id: int, api_key: str = Depends(get_api_key)):
     return User(id=row[0], name=row[1], email=row[2], telefone=row[3], sigla=row[4])
 
 
-@router.post("/users", response_model=User)
+@router.post(
+        "/users", 
+        response_model=User,
+        summary="Criar um usuario",
+        tags=["Usuários"],
+        description=
+        """
+        Pode criar qualquer usuario que você desejar
+        """
+        )
 def criar_usuario(usuario: UserCreate, api_key: str = Depends(get_api_key)):
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
