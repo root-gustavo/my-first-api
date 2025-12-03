@@ -61,9 +61,12 @@ Depois de rodar a aplicação, acesse a documentação interativa (Swagger):
 Auth Type: **API Key**
 
 Add to: **Header**
+
+#### **KEY:**
 ```bash
-Key = access_token
+access_token
 ```
+#### VALUE:
 ```bash
-value = my-api-key-test
+my-api-key-test
 ```
