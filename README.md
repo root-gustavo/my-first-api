@@ -60,7 +60,7 @@ Depois de rodar a aplicação, acesse a documentação interativa (Swagger):
 
 Auth Type: **API Key**
 
-Add to: **Header**
+
 
 #### **KEY:**
 ```bash
@@ -70,3 +70,4 @@ access_token
 ```bash
 my-api-key-test
 ```
+Add to: **Header**
