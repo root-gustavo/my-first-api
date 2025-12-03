@@ -53,3 +53,17 @@ python -m src
 Depois de rodar a aplicação, acesse a documentação interativa (Swagger):
 
 👉 **[http://localhost:8000/docs](http://localhost:8000/docs)**
+
+---
+
+## 🔑 Chave da API
+
+Auth Type: **API Key**
+
+Add to: **Header**
+```bash
+Key = access_token
+```
+```bash
+value = my-api-key-test
+```
